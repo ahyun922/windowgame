@@ -23,7 +23,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 450);
+  createCanvas(1000, 650);s
   let frames = spritedata.frames;
   for (let i = 0; i < frames.length; i++) {
     let pos = frames[i].position;
@@ -31,6 +31,11 @@ function setup() {
     animation.push(img);
   }
 
+  function keyPressed() {
+    if(key == ' ') {
+      spritedata.jump();
+    }
+  }
   for (let i = 0; i < 1; i++) {
     horses[i] = new Sprite(animation, 0, i * 75, random(0.1, 1));
   }
